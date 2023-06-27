@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-size: 62.5%;
+    --ff-primary:'Poppins', sans-serif;
+    --text-color:#E1E1E6;
+    --cor-header:#092D38;
+    --cor-butn:#065E7C;
+}
+body{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: #2F2F33;
+}
+body *{
+    font-family: var(--ff-primary-ff-primary);
+}
+button{
+    background-color: var(--cor-butn);
+}
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+}
+
+#app{
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+table{
+    background-color: var(--cor-header);
+}

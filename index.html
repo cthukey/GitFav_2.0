@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Montserrat:wght@800&family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;700;800&family=Roboto:wght@300;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>GitFav</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div>
+                <img src="./complemento/Group.svg" alt="">
+                <img src="./complemento/GitFav.svg" alt="">
+            </div>
+           
+        
+            <div class="search">
+                <label class="sr-only" for="input-search">Usuario do Github</label>
+                <input type="text" name="" id="input-search" placeholder="Digite o Github username que quer favoritar">
+                <button>
+                    <img src="./complemento/Vector.svg" alt="">
+                    FAVORITAR
+                </button>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/cthukey.png" alt="Image de perfil">
+                        <a href="https://github.com/cthukey" target="_blank">
+                            <p>Pedro Henrique</p>
+                            <span>/cthukey</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        123
+                    </td>
+                    <td class="followers">
+                        1234
+                    </td>
+                    <td>
+                        <button>Remover</button>
+                    </td>
+                    
+
+                </tr>
+
+                <tr>
+                    <td class="user">
+                        <img src="https://github.com/diego3g.png" alt="Image de perfil">
+                        <a href="https://github.com/diego3g" target="_blank">
+                            <p>Deigo fernandes</p>
+                            <span>/diego3g</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        123
+                    </td>
+                    <td class="followers">
+                        1234
+                    </td>
+                    <td>
+                        <button>Remover</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <script src=""></script>
+    </div>
+</body>
+</html>
