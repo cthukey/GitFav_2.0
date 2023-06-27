@@ -6,18 +6,21 @@
 
 :root{
     font-size: 62.5%;
-    --ff-primary:'Poppins', sans-serif;
-    --text-color:#E1E1E6;
-    --cor-header:#092D38;
+    --ff-primary:'Roboto', sans-serif;;
+    --text-color:#ffffff;
+    --cor-thead:#092D38;
     --cor-butn:#065E7C;
+    --cor-back:#2F2F33;
+    --cor-input:#06181C;
 }
 body{
     font-size: 1.6rem;
     color: var(--text-color);
-    background-color: #2F2F33;
+    background-color: var(--cor-back);
 }
 body *{
-    font-family: var(--ff-primary-ff-primary);
+    font-family: var(--ff-primary);
+    font-weight: bold;
 }
 button{
     background-color: var(--cor-butn);
@@ -27,22 +30,84 @@ button{
     width: 1px;
     height: 1px;
     padding: 0;
+    border-width: 0; /* largura da borda seja '0' */
     margin: -1px;
-    overflow: hidden;
+    overflow: hidden; /* Nao transborde pra fora. */
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
 }
 
 #app{
     padding: 2rem;
-    max-width: 500px;
+    max-width: 1120px;
     margin: 0 auto;
 }
+
+
 
 header{
     align-items: center;
     display: flex;
     justify-content: space-between;
+
+    margin: 5rem 0;
+}
+header img{
+    width: 186px;
+    height: 32px;
 }
 
+.search{
+    gap: 8px;
+    display: flex;
+    
+    max-width: 640px;
+    height: 48px;
+}
+.search input{
+    background-color: var(--cor-input);
+    border-radius: 5px;
+    border: none;
+    padding: 0 0 0 .9rem;
+    max-width: 400px;
+}
+.search button{
+    color: var(--text-color);
+    border-radius: 5px;
+    gap: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 12px 32px;
+    cursor: pointer;
+    max-width: 170px;
+}
+.search button:hover{
+    filter: brightness(1.1); /*mudar o tom 'cor'.*/
+}
+.search button img{
+    width: 24px;
+}
+
+
+
 table{
-    background-color: var(--cor-header);
+    width: 100%;
+    border-collapse: collapse;
+}
+table *{
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+table th{
+    background-color: var(--cor-thead);
+    text-align: left;
+    font-weight: normal;
+    padding: 1.5rem;   
+}
+td.user img{
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
 }
