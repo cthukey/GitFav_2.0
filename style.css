@@ -1,9 +1,10 @@
+/************** PG ****************/
+
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 :root{
     font-size: 62.5%;
     --ff-primary:'Roboto', sans-serif;;
@@ -22,10 +23,21 @@ body *{
     font-family: var(--ff-primary);
     font-weight: bold;
 }
+#app{
+    padding: 2rem;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+
+
+/************** HEAD ****************/
+
+
 button{
     background-color: var(--cor-butn);
 }
-.sr-only{
+.sr-only{ /*FZ Q SUMA O TEXT*/
     position: absolute;
     width: 1px;
     height: 1px;
@@ -36,15 +48,6 @@ button{
     clip: rect(0,0,0,0);
     white-space: nowrap;
 }
-
-#app{
-    padding: 2rem;
-    max-width: 1120px;
-    margin: 0 auto;
-}
-
-
-
 header{
     align-items: center;
     display: flex;
@@ -56,6 +59,12 @@ header img{
     width: 186px;
     height: 32px;
 }
+
+
+
+/************** HEADER.SEARCH ****************/
+
+
 
 .search{
     gap: 8px;
@@ -91,6 +100,9 @@ header img{
 
 
 
+/************** TABLE ****************/
+
+
 table{
     width: 100%;
     border-collapse: collapse;
@@ -99,12 +111,28 @@ table *{
     font-size: 1.4rem;
     color: var(--text-color);
 }
+
+
+/************** TH ****************/
+
+
+table th:first-child{
+    border-top-left-radius:.8rem ;
+} 
+table th:last-child{
+    border-top-right-radius:.8rem ;
+}
 table th{
     background-color: var(--cor-thead);
     text-align: left;
     font-weight: normal;
     padding: 1.5rem;   
 }
+
+
+/************** TBODY.USER ****************/
+
+
 td.user img{
     border-radius: 50%;
     width: 5rem;
