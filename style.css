@@ -13,6 +13,10 @@
     --cor-butn:#065E7C;
     --cor-back:#2F2F33;
     --cor-input:#06181C;
+    --cor-fundImpar:#081f24bb;
+    --cor-fundoPar:#06161b80;
+    --cor-borda:#4A808C;
+
 }
 body{
     font-size: 1.6rem;
@@ -34,7 +38,7 @@ body *{
 /************** HEAD ****************/
 
 
-button{
+.btnFavorito{
     background-color: var(--cor-butn);
 }
 .sr-only{ /*FZ Q SUMA O TEXT*/
@@ -106,6 +110,9 @@ header img{
 table{
     width: 100%;
     border-collapse: collapse;
+
+    box-shadow: 0 0px 1px var(--cor-borda);
+    border-radius: 8px;
 }
 table *{
     font-size: 1.4rem;
@@ -125,7 +132,7 @@ table th:last-child{
 table th{
     background-color: var(--cor-thead);
     text-align: left;
-    font-weight: normal;
+    font-weight: bold;
     padding: 1.5rem;   
 }
 
@@ -139,3 +146,31 @@ td.user img{
     height: 5rem;
     object-fit: cover;
 }
+table td{
+    padding: 1.5rem;
+}
+table tr:nth-child(even){
+    background-color: var(--cor-fundImpar);
+}
+table tr:nth-child(odd){
+    background-color: var(--cor-fundoPar);
+}
+table .user{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+table .user a{
+    text-decoration: none;
+}
+table .user span{
+    font-weight:400;
+}
+table td .remove{
+    background:none;
+    border: none;
+    color: #F75A68;
+    font-weight: bold;
+    cursor: pointer;
+}
+
