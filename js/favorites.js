@@ -1,8 +1,15 @@
-class githubUser{
+class GithubUser{
     static search(username){
         const endpoint = `https://api.github.com/users/${username}`
 
-        //tendo que retornar o endpoint em json
+        return fetch(endpoint)
+        .then(data => data.json())
+        .then(data => ({
+            login: data.login,
+            name: data.name,
+            public_repos: data.public_repos,
+            followers: data.followers,
+        })) 
     }
 }
 
@@ -19,7 +26,7 @@ class favorites{
         this.entries = JSON.parse(localStorage.getItem
         ('@github-favorites:')) || []
 
-        console.log(this.entries)
+        // console.log(this.entries)
         
     }
 
