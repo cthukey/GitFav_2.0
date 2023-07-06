@@ -1,3 +1,11 @@
+class githubUser{
+    static search(username){
+        const endpoint = `https://api.github.com/users/${username}`
+
+        //tendo que retornar o endpoint em json
+    }
+}
+
 //class que vai conter a logica dos dados
 //Como os dados serao estruturados
 class favorites{
@@ -8,21 +16,21 @@ class favorites{
     }
 
     load(){
-        this.entries = [
-            {
-                login:'cthukey',
-                name:'Pedro Henrique',
-                public_repos:'76',
-                followers:'120000',
-            },
+        this.entries = JSON.parse(localStorage.getItem
+        ('@github-favorites:')) || []
 
-            {
-                login:'diego3g',
-                name:'Diego fernandes',
-                public_repos:'78',
-                followers:'120000',
-            }
-        ]
+        console.log(this.entries)
+        
+    }
+
+    delete(user){
+        const filteredEntries = this.entries
+        .filter(entry => entry.login !== user.login)
+        
+        this.entries = filteredEntries
+        this.update()
+        
+        // console.log(filteredEntries)
     }
 }
 
@@ -53,7 +61,13 @@ export class favoriteView extends favorites{
             row.querySelector('.repositories').textContent = `${user.public_repos}`
             row.querySelector('.followers').textContent = `${user.followers}`
 
-
+            row.querySelector('.remove').onclick = () =>{
+               const isOk = confirm('Tem certeza que deseja deletar essa linha?')
+            
+                if(isOk){
+                    this.delete(user)
+                }
+            }
 
 
 
