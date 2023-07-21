@@ -1,4 +1,4 @@
-class GithubUser{
+export class GithubUser{
     static search(username){
         const endpoint = `https://api.github.com/users/${username}`
 
@@ -15,18 +15,32 @@ class GithubUser{
 
 //class que vai conter a logica dos dados
 //Como os dados serao estruturados
-class favorites{
+export class favorites{
     constructor(root){
         this.root = document.querySelector('root')
         
         this.load()
-    }
+        
+    } 
 
     load(){
         this.entries = JSON.parse(localStorage.getItem
         ('@github-favorites:')) || []
 
         // console.log(this.entries)
+        
+    }
+
+    async add(username){
+        try{
+            const user = await GithubUser.search(username)
+
+            if(user.login === undefined){
+                throw new Error('Usuario nao encontrado!')
+            }
+        } catch(error){
+            alert(error.message)
+        }
         
     }
 
@@ -53,6 +67,16 @@ export class favoriteView extends favorites{
         this.tbody = document.querySelector('table tbody')
 
         this.update()
+        this.onadd()
+    }
+
+    onadd(){
+        const addButton = document.querySelector('.search button')
+        addButton.onclick = () => {
+            const { value } = document.querySelector('.search input')
+
+            this.add(value)
+        }
     }
 
     update(){
